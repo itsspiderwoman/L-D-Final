@@ -183,7 +183,7 @@ h1 {
 
   <div class="polaroid">
     <img src="./leah.jpg.jpeg" alt="Leah">
-    <p>I </p>
+    <p>✨I </p>
   </div>
 
   <div class="polaroid">
@@ -199,7 +199,7 @@ h1 {
 </div>
     </div>
 
-    <h1>BEST GIRLFRIEND IN THE WHOLE WORLD❤️</h1>
+    <h1>❤️BEST GIRLFRIEND IN THE WHOLE WORLD❤️</h1>
 
   </div>
 
@@ -237,6 +237,19 @@ document.getElementById("tapScreen").onclick = function() {
     document.body.appendChild(light);
 
     setTimeout(() => light.remove(), 8000);
+  }
+
+  /* ROSES */
+  for (let i - 0; i < 30; i++) {
+    let rose = document.createElement("div");
+    rose.className = "rose";
+
+    rose.style.left = Math.random() * 100 + "vw";
+    rose.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(rose);
+
+    setTimeout(() => rose.remove(), 8000);
   }
 };
 
