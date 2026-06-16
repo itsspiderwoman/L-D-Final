@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   color: white;
   background: linear-gradient(-45deg, #ff4d88, #ff85a2, #a855f7, #6a11cb);
   background-size: 400% 400%;
@@ -27,7 +27,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* TAP SCREEN */
 #tapScreen {
   font-size: 40px;
   padding: 25px 40px;
@@ -44,22 +43,19 @@ body {
   box-shadow: 0 0 25px white;
 }
 
-/* MAIN CONTENT */
 #content {
   display: none;
   padding: 20px;
 }
 
-/* CARD */
 .card {
   background: rgba(0,0,0,0.4);
   padding: 25px;
   border-radius: 20px;
-  max-width: 800px;
+  max-width: 900px;
   box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
-/* POLAROIDS */
 .polaroid-container {
   display: flex;
   justify-content: center;
@@ -70,7 +66,7 @@ body {
 
 .polaroid {
   background: white;
-  padding: 10px 10px 25px 10px;
+  padding: 10px 10px 25px;
   width: 180px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
   transform: rotate(-2deg);
@@ -102,7 +98,6 @@ body {
   font-weight: bold;
 }
 
-/* TEXT */
 h1 {
   margin-top: 15px;
   font-size: 32px;
@@ -115,7 +110,6 @@ h1 {
   line-height: 1.6;
 }
 
-/* FLOATING HEARTS */
 .heart {
   position: absolute;
   color: pink;
@@ -123,7 +117,6 @@ h1 {
   animation: float 5s linear infinite;
 }
 
-/* LIGHTS */
 .light {
   position: absolute;
   width: 8px;
@@ -135,7 +128,6 @@ h1 {
   animation: glow 6s linear infinite;
 }
 
-/* ROSES */
 .rose {
   position: absolute;
   font-size: 24px;
@@ -171,35 +163,38 @@ h1 {
 
 <body>
 
-<!-- TAP -->
 <div id="tapScreen">Tap Me ❤️</div>
 
-<!-- CONTENT -->
 <div id="content">
 
   <div class="card">
 
-   <div class="polaroid-container">
+    <div class="polaroid-container">
 
-  <div class="polaroid">
-    <img src="./leah.jpg.jpeg" alt="Leah">
-    <p>✨I </p>
-  </div>
+      <div class="polaroid">
+        <img src="leah.jpg.jpeg" alt="Leah">
+        <p>✨ I ✨</p>
+      </div>
 
-  <div class="polaroid">
-    <img src="./leah1.jpg.jpeg" alt="Leah 1">
-    <p>LOVE </p>
-  </div>
+      <div class="polaroid">
+        <img src="leah1.jpg.jpeg" alt="Leah 1">
+        <p>❤️ LOVE ❤️</p>
+      </div>
 
-  <div class="polaroid">
-    <img src="./leah2.jpg.jpeg" alt="Leah 2">
-    <p>YOU ✨</p>
-  </div>
+      <div class="polaroid">
+        <img src="leah2.jpg.jpeg" alt="Leah 2">
+        <p>✨ YOU ✨</p>
+      </div>
 
-</div>
     </div>
 
-    <h1>❤️BEST GIRLFRIEND IN THE WHOLE WORLD❤️</h1>
+    <h1>❤️ BEST GIRLFRIEND IN THE WHOLE WORLD ❤️</h1>
+
+    <div class="message">
+      Leah, you are the most beautiful, caring, and amazing girl in my life.
+      Thank you for all the smiles, laughter, memories, and love.
+      I love you so much and I'm grateful for every moment with you. ❤️
+    </div>
 
   </div>
 
@@ -212,7 +207,6 @@ document.getElementById("tapScreen").onclick = function() {
   document.getElementById("tapScreen").style.display = "none";
   document.getElementById("content").style.display = "block";
 
-  /* HEARTS */
   for (let i = 0; i < 40; i++) {
     let heart = document.createElement("div");
     heart.className = "heart";
@@ -226,7 +220,6 @@ document.getElementById("tapScreen").onclick = function() {
     setTimeout(() => heart.remove(), 6000);
   }
 
-  /* LIGHTS */
   for (let i = 0; i < 30; i++) {
     let light = document.createElement("div");
     light.className = "light";
@@ -239,10 +232,10 @@ document.getElementById("tapScreen").onclick = function() {
     setTimeout(() => light.remove(), 8000);
   }
 
-  /* ROSES */
-  for (let i - 0; i < 30; i++) {
+  for (let i = 0; i < 30; i++) {
     let rose = document.createElement("div");
     rose.className = "rose";
+    rose.innerHTML = "🌹";
 
     rose.style.left = Math.random() * 100 + "vw";
     rose.style.animationDuration = (4 + Math.random() * 4) + "s";
@@ -251,6 +244,7 @@ document.getElementById("tapScreen").onclick = function() {
 
     setTimeout(() => rose.remove(), 8000);
   }
+
 };
 
 </script>
