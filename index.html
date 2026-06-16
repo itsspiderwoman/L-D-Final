@@ -15,8 +15,16 @@ body {
   align-items: center;
   font-family: Arial;
   color: white;
-  background: linear-gradient(135deg, #ff4d88, #6a11cb);
+  background: linear-gradient(-45deg, #ff4d88, #ff85a2, #a855f7, #6a11cb);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
   text-align: center;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* TAP SCREEN */
@@ -33,7 +41,7 @@ body {
 
 #tapScreen:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 25px #ff4d88;
+  box-shadow: 0 0 25px white;
 }
 
 /* MAIN CONTENT */
@@ -47,7 +55,7 @@ body {
   background: rgba(0,0,0,0.4);
   padding: 25px;
   border-radius: 20px;
-  max-width: 700px;
+  max-width: 800px;
   box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
@@ -69,8 +77,13 @@ body {
   transition: 0.3s;
 }
 
-.polaroid:nth-child(2) { transform: rotate(3deg); }
-.polaroid:nth-child(3) { transform: rotate(-4deg); }
+.polaroid:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.polaroid:nth-child(3) {
+  transform: rotate(-4deg);
+}
 
 .polaroid:hover {
   transform: scale(1.05) rotate(0deg);
@@ -86,42 +99,72 @@ body {
   margin: 10px 0 0;
   font-size: 14px;
   color: #333;
+  font-weight: bold;
 }
 
-/* LOVE TEXT */
+/* TEXT */
 h1 {
   margin-top: 15px;
-  font-size: 28px;
+  font-size: 32px;
+  text-shadow: 0 0 15px pink;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* FLOATING HEARTS */
 .heart {
   position: absolute;
   color: pink;
-  font-size: 20px;
+  font-size: 24px;
   animation: float 5s linear infinite;
 }
 
-/* LIGHT ORB EFFECT */
+/* LIGHTS */
 .light {
   position: absolute;
   width: 8px;
   height: 8px;
   background: white;
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 0.8;
+  box-shadow: 0 0 10px white;
   animation: glow 6s linear infinite;
 }
 
+/* ROSES */
+.rose {
+  position: absolute;
+  font-size: 24px;
+  animation: float 8s linear infinite;
+}
+
 @keyframes float {
-  from { transform: translateY(100vh); opacity: 1; }
-  to { transform: translateY(-10vh); opacity: 0; }
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
 }
 
 @keyframes glow {
-  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
 }
 </style>
 </head>
