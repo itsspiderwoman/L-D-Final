@@ -201,12 +201,18 @@ h1 {
 
 </div>
 
+<audio id="bgMusic" loop>
+  <source src="Youngblue.mp4" type="video/mp4">
+</audio>
+
 <script>
 
 document.getElementById("tapScreen").onclick = function() {
 
   document.getElementById("tapScreen").style.display = "none";
   document.getElementById("content").style.display = "block";
+
+  document.getElementById("bgMusic").play();
 
   for (let i = 0; i < 40; i++) {
     let heart = document.createElement("div");
